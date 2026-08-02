@@ -1,0 +1,10 @@
+import type { FieldSpec } from "./types.js";
+
+export const APP_NAME = "Packet Scope";
+export const SOCKET_REFRESH_MS = 350;
+export const SOCKET_GRACE_MS = 5_000;
+export const MAX_ASCII_PREVIEW = 160;
+export const FIELD_SPECS: FieldSpec[] = [
+  ["number", "frame.number"], ["timeEpoch", "frame.time_epoch"], ["frameLength", "frame.len"], ["capturedLength", "frame.cap_len"], ["encapsulation", "frame.encap_type"], ["protocolStack", "frame.protocols"], ["ethSource", "eth.src"], ["ethDestination", "eth.dst"], ["wlanSource", "wlan.sa"], ["wlanDestination", "wlan.da"], ["ipv4Source", "ip.src"], ["ipv4Destination", "ip.dst"], ["ipv4Ttl", "ip.ttl"], ["ipv4Protocol", "ip.proto"], ["ipv6Source", "ipv6.src"], ["ipv6Destination", "ipv6.dst"], ["ipv6HopLimit", "ipv6.hlim"], ["ipv6NextHeader", "ipv6.nxt"], ["tcpSourcePort", "tcp.srcport"], ["tcpDestinationPort", "tcp.dstport"], ["tcpFlags", "tcp.flags"], ["tcpSequence", "tcp.seq"], ["tcpAcknowledgement", "tcp.ack"], ["tcpStream", "tcp.stream"], ["tcpPayload", "tcp.payload"], ["udpSourcePort", "udp.srcport"], ["udpDestinationPort", "udp.dstport"], ["udpLength", "udp.length"], ["udpStream", "udp.stream"], ["udpPayload", "udp.payload"], ["tlsRecordType", "tls.record.content_type"], ["tlsHandshakeType", "tls.handshake.type"], ["tlsVersion", "tls.record.version"], ["httpMethod", "http.request.method"], ["httpUri", "http.request.uri"], ["httpHost", "http.host"], ["httpContentType", "http.content_type"], ["dnsQuery", "dns.qry.name"], ["dataPayload", "data.data"], ["columnProtocol", "_ws.col.Protocol"], ["columnInfo", "_ws.col.Info"]
+].map(([key, field]) => ({ key, field }));
+export const ANSI = { reset: "\u001b[0m", bold: "\u001b[1m", dim: "\u001b[2m", cyan: "\u001b[36m", green: "\u001b[32m", yellow: "\u001b[33m", red: "\u001b[31m", magenta: "\u001b[35m" };

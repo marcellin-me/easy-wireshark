@@ -5,10 +5,16 @@
   "type": "module",
   "description": "Interactive macOS CLI for selecting a network interface, choosing a process, and viewing its packets by OSI layer.",
   "scripts": {
-    "capture": "node src/index.js",
-    "check": "node --check src/index.js"
+    "build": "tsc",
+    "capture": "npm run build && node dist/index.js",
+    "check": "tsc --noEmit",
+    "test": "npm run build && node --test dist/**/*.test.js"
   },
   "engines": {
     "node": ">=20"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.0.0"
   }
 }
